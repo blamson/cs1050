@@ -13,37 +13,6 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-// Grocery item class  ********************************************************
-class GroceryListItem {
-    // Instance Variables -----------------------------------------------------
-    private boolean onSale;     // If item is on sale it gets a 20% discount
-    private String itemName;    // Name of the object
-    private double price;       // Price of the object
-
-    // default constructor ----------------------------------------------------
-    public GroceryListItem() {
-        price = 0;
-        itemName = "";
-        onSale = false;
-    } // End default constructor
-
-    // Note: I have deliberately made the below methods 1-liners as I feel it
-    //       makes the code far more readable.
-    // getter methods ---------------------------------------------------------
-    public double getPrice() {return this.price;}
-
-    public String getItemName() {return this.itemName;}
-
-    public boolean getOnSale() {return this.onSale;}
-
-    // setter methods ---------------------------------------------------------
-    public void setPrice(double price) {this.price = price;}
-
-    public void setItemName(String itemName) {this.itemName = itemName;}
-
-    public void setOnSale(boolean onSale) {this.onSale = onSale;}
-}
-
 // Primary project class ******************************************************
 public class BradyLamson_03_Grocery {
     // Instance variables -----------------------------------------------------
@@ -61,8 +30,8 @@ public class BradyLamson_03_Grocery {
             // end loop variables ---------------------------------------------
 
             // Lines 63 -> 96 take in info on grocery item attributes
-            System.out.print("\nPlease input a grocery item name. "
-                    + "Press <Enter> here to exit the program: ");
+            System.out.print("\nPlease input a grocery item name or "
+                    + "\npress <Enter> to exit the program: ");
             groceryItem.setItemName(scan.nextLine());
 
             // Exits loop when <Enter> is input at itemName step.
@@ -84,7 +53,7 @@ public class BradyLamson_03_Grocery {
             yesOrNo = scan.next().toLowerCase();
 
             switch (yesOrNo) {
-                case "yes":     // Stacking cases like this allows for different
+                case "yes":     // Stacking cases allows for different
                 case "y":       // cases to do the same thing. Like an 'or'.
                     groceryItem.setOnSale(true);
                     break;
@@ -160,3 +129,34 @@ public class BradyLamson_03_Grocery {
         myList.printGroceryList(0.07, 0.20);
     } // end main
 }   // end BradyLamson_03_Grocery
+
+// Grocery item class  ********************************************************
+class GroceryListItem {
+    // Instance Variables -----------------------------------------------------
+    private boolean onSale;     // If item is on sale it gets a 20% discount
+    private String itemName;    // Name of the object
+    private double price;       // Price of the object
+
+    // default constructor ----------------------------------------------------
+    public GroceryListItem() {
+        price = 0;
+        itemName = "";
+        onSale = false;
+    } // End default constructor
+
+    // Note: I have deliberately made the below methods 1-liners as I feel it
+    //       makes the code far more readable.
+    // getter methods ---------------------------------------------------------
+    public double getPrice() {return this.price;}
+
+    public String getItemName() {return this.itemName;}
+
+    public boolean getOnSale() {return this.onSale;}
+
+    // setter methods ---------------------------------------------------------
+    public void setPrice(double price) {this.price = price;}
+
+    public void setItemName(String itemName) {this.itemName = itemName;}
+
+    public void setOnSale(boolean onSale) {this.onSale = onSale;}
+}
